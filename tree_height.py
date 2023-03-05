@@ -13,10 +13,7 @@ def compute_height(n, parents):
         else:
             tree_height[parents[i]]+=1
             tree_height[i]=parents[i]
-    max_height=0
-    while variable!=-1:
-        max_height+=1
-        variable=tree_height[variable]
+    max_height=np.amax(tree_height)+1
     return max_height
 
 
