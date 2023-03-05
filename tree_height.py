@@ -8,9 +8,25 @@ import numpy
 def compute_height(n, parents):
     # Write this function
     roots = {}
-    
-    max_height = 0
+    for i in range(n):
+        if parents==-1:
+            tree=i
+        else:
+            if parents[i] in roots:
+                parents[i].append(i)
+            else:
+                parents[i]=i
     # Your code here
+    def find_height(oneroot):
+        if oneroot in roots:
+            max_height = 0
+            for i in roots[oneroot]:
+                height=height(i)
+                if height>max_height:
+                    max_height=height
+            return max_height
+        else:
+            return 0
     return max_height
 
 
