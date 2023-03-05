@@ -40,22 +40,23 @@ def main():
     # implement input form keyboard and from files
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
+    tests=None
+    n=None
+    parents=None
     input_kf=input()
-    tests = ""
-    n = None
-    if input_kf=="k":
+    if input_kf=="I":
         # input number of elements
         n = int(input())
         # input values in one variable, separate with space, split these values in an array
         parents = list(map(int,input().split()))
-    if input_kf=="f":
+    if input_kf=="F":
         tests = input()
-    if tests!="":
+    if tests!=None:
         with open(tests) as f:
             n = int(f.readline())
             parents=list(map(int,f.readline().split()))
     # call the function and output it's result
-    if n != None:
+    if n!=None and parents!=None
         print(compute_height(n, parents))        
     
 
