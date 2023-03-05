@@ -6,33 +6,17 @@ import numpy
 import os
 
 def compute_height(n, parents):
-    # Write this function
-    roots = {}
+    tree_height=np.zeros(n,dtype=int)
     for i in range(n):
         if parents[i]==-1:
-            tree=i
+            variable=i
         else:
-            if parents[i] in roots:
-                roots[parents[i]].append(i)
-            else:
-                roots[parents[i]]=[i]
-    # Your code here
-    def find_height(oneroot):
-        if oneroot in roots:
-            max_height = 0
-            for i in roots[oneroot]:
-                if i!=oneroot:
-                   height=find_height(i)
-                   if height>max_height:
-                        max_height=height
-            return 1+max_height
-        else:
-            return 1
-    max_height = 0
-    for i in roots:
-        height=find_height(i)
-        if height>max_height:
-            max_height=height
+            tree_height[parents[i]]+=1
+            tree[i]=parents[i]
+    max_height=0
+    while tree_height!=-1
+        max_height+=1
+        variable=tree_height[max_height]
     return max_height
 
 
@@ -40,21 +24,24 @@ def main():
     # implement input form keyboard and from files
     input_IF=input()
     if input_IF[0]=="I":
+        # input number of elements
         n=int(input())
+        # input values in one variable, separate with space, split these values in an array
         parents=list(map(int,input().split()))
+         # call the function and output it's result  
         print(compute_height(n, parents))
     elif input_IF[0]=="F":
         tests=input()
         if "a" not in tests:
+            # let user input file name to use, don't allow file names with letter a
             with open("test/"+tests) as f:
+                # input number of elements
                 n=int(f.readline())
+                # input values in one variable, separate with space, split these values in an array
                 parents=list(map(int, f.readline().split()))
+                # call the function and output it's result  
                 print(compute_height(n,parents))
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result     
+    # account for github input inprecision   
     
 
 # In Python, the default limit on recursion depth is rather low,
