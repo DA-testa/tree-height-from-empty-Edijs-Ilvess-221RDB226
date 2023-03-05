@@ -52,7 +52,7 @@ def main():
     if input_kf=="F":
         tests = input()
     if tests!=None:
-        with open(tests) as f:
+        with open("test/" + tests) as f:
             n = int(f.readline())
             parents=list(map(int,f.readline().split()))
     # call the function and output it's result
