@@ -14,9 +14,9 @@ def compute_height(n, parents):
             tree_height[parents[i]]+=1
             tree[i]=parents[i]
     max_height=0
-    while tree_height!=-1
+    while variable!=-1
         max_height+=1
-        variable=tree_height[max_height]
+        variable=tree_height[variable]
     return max_height
 
 
