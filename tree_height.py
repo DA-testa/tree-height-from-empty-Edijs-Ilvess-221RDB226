@@ -21,9 +21,10 @@ def compute_height(n, parents):
         if oneroot in roots:
             max_height = 0
             for i in roots[oneroot]:
-                height=find_height(i)
-                if height>max_height:
-                    max_height=height
+                if i!=oneroot:
+                   height=find_height(i)
+                    if height>max_height:
+                        max_height=height
             return 1+max_height
         else:
             return 1
@@ -53,5 +54,4 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
 # print(numpy.array([1,2,3]))
