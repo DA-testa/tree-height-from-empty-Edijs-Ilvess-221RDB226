@@ -9,7 +9,7 @@ def compute_height(n, parents):
     tree_height=np.zeros(n,dtype=int)
     for i in range(n):
         if parents[i]==-1:
-            variable=i
+            tree_height=1
         else:
             tree_height[i]=tree_height[parents[i]]+1
     return np.max(tree_height)
