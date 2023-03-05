@@ -42,6 +42,7 @@ def main():
     # account for github input inprecision
     input_kf=input()
     tests = ""
+    n = None
     if input_kf=="k":
         # input number of elements
         n = int(input())
@@ -54,7 +55,8 @@ def main():
             n = int(f.readline())
             parents=list(map(int,f.readline().split()))
     # call the function and output it's result
-    print(compute_height(n, parents))        
+    if n != None:
+        print(compute_height(n, parents))        
     
 
 # In Python, the default limit on recursion depth is rather low,
