@@ -56,7 +56,7 @@ def main():
             n = int(f.readline())
             parents=list(map(int,f.readline().split()))
     # call the function and output it's result
-    if n!=None and parents!=None
+    if n!=None and parents!=None:
         print(compute_height(n, parents))        
     
 
