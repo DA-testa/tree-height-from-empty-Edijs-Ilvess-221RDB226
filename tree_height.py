@@ -10,12 +10,12 @@ def compute_height(n, parents):
     for i in range(n):
         checker=i
         height=0
-        while checker!=-1
+        while checker!=-1:
             if tree_height[checker]!=0:
                 height+=tree_height[checker]
                 break
             height+=1
-            checker=parents[checkr]
+            checker=parents[checker]
         tree_height[i]=height
     return np.max(tree_height)
 
