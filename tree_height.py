@@ -23,7 +23,7 @@ def compute_height(n, parents):
             for i in roots[oneroot]:
                 if i!=oneroot:
                    height=find_height(i)
-                    if height>max_height:
+                   if height>max_height:
                         max_height=height
             return 1+max_height
         else:
