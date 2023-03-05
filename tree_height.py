@@ -9,24 +9,29 @@ def compute_height(n, parents):
     # Write this function
     roots = {}
     for i in range(n):
-        if parents==-1:
+        if parents[i]==-1:
             tree=i
         else:
             if parents[i] in roots:
-                children[parents[i]].append(i)
+                roots[parents[i]].append(i)
             else:
-                children[parents[i]]=i
+                roots[parents[i]]=[i]
     # Your code here
     def find_height(oneroot):
         if oneroot in roots:
             max_height = 0
             for i in roots[oneroot]:
-                height=height(i)
+                height=find_height(i)
                 if height>max_height:
                     max_height=height
-            return max_height
+            return 1+max_height
         else:
-            return 0
+            return 1
+    max_height = 0
+    for i in roots:
+        height=find_height(i)
+        if height>max_height:
+            max_height=height
     return max_height
 
 
@@ -38,7 +43,7 @@ def main():
     # input number of elements
     n = int(input())
     # input values in one variable, separate with space, split these values in an array
-    parents = list(map(input().split()))
+    parents = list(map(int, input().split()))
     # call the function and output it's result
     print(compute_height(n, parents))
 
