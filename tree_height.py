@@ -13,9 +13,9 @@ def compute_height(n, parents):
             tree=i
         else:
             if parents[i] in roots:
-                parents[i].append(i)
+                children[parents[i]].append(i)
             else:
-                parents[i]=i
+                children[parents[i]]=i
     # Your code here
     def find_height(oneroot):
         if oneroot in roots:
