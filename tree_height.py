@@ -7,6 +7,8 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
+    roots = {}
+    
     max_height = 0
     # Your code here
     return max_height
@@ -14,14 +16,15 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
-    
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
     # input number of elements
+    n = int(input())
     # input values in one variable, separate with space, split these values in an array
+    parents = list(map(input().split()))
     # call the function and output it's result
-    pass
+    print(compute_height(n, parents))
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
