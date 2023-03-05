@@ -41,6 +41,7 @@ def main():
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     input_kf=input()
+    tests = ""
     if input_kf=="k":
         # input number of elements
         n = int(input())
@@ -48,9 +49,10 @@ def main():
         parents = list(map(int,input().split()))
     if input_kf=="f":
         tests = input()
-    with open(tests) as f:
-        n = int(f.readline())
-        parents=list(map(int,f.readline().split()))
+    if tests!="":
+        with open(tests) as f:
+            n = int(f.readline())
+            parents=list(map(int,f.readline().split()))
     # call the function and output it's result
     print(compute_height(n, parents))        
     
