@@ -3,7 +3,7 @@
 import sys
 import threading
 import numpy
-
+import os
 
 def compute_height(n, parents):
     # Write this function
@@ -40,13 +40,20 @@ def main():
     # implement input form keyboard and from files
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
-    
-    # input number of elements
-    n = int(input())
-    # input values in one variable, separate with space, split these values in an array
-    parents = list(map(int, input().split()))
+    input_kf=input()
+    if input_kf=="k":
+        # input number of elements
+        n = int(input())
+        # input values in one variable, separate with space, split these values in an array
+        parents = list(map(int,input().split()))
+    if input_kf=="f":
+        tests = input()
+    with open(tests) as f:
+        n = int(f.readline())
+        parents=list(map(int,f.readline().split()))
     # call the function and output it's result
-    print(compute_height(n, parents))
+    print(compute_height(n, parents))        
+    
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
